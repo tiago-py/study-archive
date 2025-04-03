@@ -10,7 +10,7 @@ const Home = () => {
             <div className="bg-slate-950 text-white min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
                 <div className="max-w-4xl w-full">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 md:mb-12 leading-tight">
-                        Olá, Victor Junqueira
+                        Olá!
                     </h1>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                         {[
