@@ -51,7 +51,8 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                 { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
                 { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
                 { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
-                { label: 'Excel', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/excel' }
+                { label: 'Excel', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/excel' },
+               { label: 'Chat PDF', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: 'chat' } 
             ]
         },
     ];
