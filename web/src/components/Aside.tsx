@@ -39,12 +39,11 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
         { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
         { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
         { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
-        { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/ChatPDF' },
+        { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/chat' },
     ];
 
     const mobileNavItems = [
         { label: 'Home', icon: <Home size={24} className='text-blue-500' />, href: '/' },
-        { label: 'Rotina', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/routine' },
         {
             label: 'Módulos',
             icon: <LayoutGrid size={24} className='text-blue-500' />,
@@ -52,6 +51,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                 { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
                 { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
                 { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
+                { label: 'Excel', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/excel' }
             ]
         },
     ];
