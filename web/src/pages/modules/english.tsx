@@ -54,7 +54,6 @@ const practiceResources = [
 
 const English = () => {
   return (
-    <>
       <Aside>
         <div className="flex min-h-screen bg-slate-950 text-white flex-1 p-6">
           <main className="flex-1 p-6">
@@ -186,7 +185,6 @@ const English = () => {
           </main>
         </div>
       </Aside>
-    </>
   );
 };
 

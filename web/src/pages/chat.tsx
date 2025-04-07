@@ -18,17 +18,12 @@ export default function ChatPDFInterface() {
         {/* Header */}
         <header className="flex items-center p-4 border-b border-slate-800">
           <div className="flex items-center flex-1">
-            <Button variant="ghost" size="icon" className="hover:bg-slate-800 mr-2">
-              <Menu className="h-5 w-5 mx-auto" />
-            </Button>
-
-            <Button variant="ghost" size="icon" className="hover:bg-slate-800 mr-4">
+            <Button variant="ghost" size="icon" className="rounded-full mr-4">
               <HelpCircle className="h-5 w-5 mx-auto" />
             </Button>
 
             <div className="flex items-center">
               <span className="font-medium">ChatPDF</span>
-              <ChevronDown className="h-4 w-4 ml-1 text-slate-400" />
             </div>
           </div>
         </header>
@@ -60,7 +55,7 @@ export default function ChatPDFInterface() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full hover:bg-blue-600 h-7 w-7 flex items-center justify-center shadow-md transition-colors"
+                className="rounded-full hover:bg-blue-600 h-8 w-8 flex items-center justify-center shadow-md transition-colors"
               >
                 <Send className="h-4 w-4 text-white" />
               </Button>

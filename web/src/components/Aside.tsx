@@ -51,8 +51,8 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                 { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
                 { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
                 { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
-                { label: 'Excel', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/excel' },
-               { label: 'Chat PDF', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: 'chat' } 
+                { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
+                { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/chat' }
             ]
         },
     ];
@@ -69,10 +69,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
 
     useEffect(() => {
         updateSidebarState();
-        window.addEventListener('resize', () => {
-            updateSidebarState();
-            setMobileOpenSubMenu(null);
-        });
+        window.addEventListener('resize', updateSidebarState);
 
         return () => {
             window.removeEventListener('resize', updateSidebarState);
@@ -80,17 +77,18 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (mobileOpenSubMenu && !(event.target as Element).closest('.mobile-submenu')) {
-                setMobileOpenSubMenu(null);
-            }
-        };
+    const handleClickOutside = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        if (mobileOpenSubMenu && !target.closest('.mobile-nav-button')) {
+            setMobileOpenSubMenu(null);
+        }
+    };
 
-        document.addEventListener('click', handleClickOutside);
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, [mobileOpenSubMenu]);
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+        document.removeEventListener('click', handleClickOutside);
+    };
+}, [mobileOpenSubMenu]);
 
     const toggleSidebar = () => {
         setIsOpen((prev) => {
@@ -109,7 +107,8 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
         setOpenSubMenu(openSubMenu === menu ? null : menu);
     };
 
-    const toggleMobileSubMenu = (menu: string) => {
+    const toggleMobileSubMenu = (menu: string, e: React.MouseEvent) => {
+        e.stopPropagation();
         setMobileOpenSubMenu(prevMenu => prevMenu === menu ? null : menu);
     };
 
@@ -202,23 +201,23 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                 <nav className="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-blue-600 z-50">
                     <div className="flex justify-around items-center h-16">
                         {mobileNavItems.map((item, index) => (
-                            <div key={index} className="relative group">
+                            <div key={index} className="relative">
                                 {item.subItems ? (
-                                    <>
+                                    <div className="h-full flex items-center justify-center">
                                         <button
-                                            onClick={() => toggleMobileSubMenu(item.label)}
-                                            className="flex flex-col items-center justify-center w-full h-full text-white hover:text-blue-500"
+                                            onClick={(e) => toggleMobileSubMenu(item.label, e)}
+                                            className="mobile-nav-button flex flex-col items-center justify-center w-full h-full text-white hover:text-blue-500 px-4 py-2"
                                         >
                                             {item.icon}
                                             <span className="text-xs mt-1">{item.label}</span>
                                         </button>
                                         {mobileOpenSubMenu === item.label && (
-                                            <div className="mobile-submenu absolute bottom-full left-1/2 transform -translate-x-1/2 w-64 bg-slate-800 rounded-t-lg shadow-lg">
+                                            <div className="absolute bottom-full left-0 w-48 bg-slate-800 rounded-t-lg shadow-lg mb-1">
                                                 {item.subItems.map((subItem, subIndex) => (
                                                     <Link
                                                         key={subIndex}
                                                         href={subItem.href}
-                                                        className="flex items-center px-4 py-3 text-white hover:bg-slate-700"
+                                                        className="flex items-center px-4 py-3 text-white hover:bg-slate-700 border-b border-slate-700 last:border-b-0"
                                                         onClick={() => setMobileOpenSubMenu(null)}
                                                     >
                                                         {subItem.icon}
@@ -227,11 +226,11 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                                                 ))}
                                             </div>
                                         )}
-                                    </>
+                                    </div>
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className="flex flex-col items-center justify-center w-full h-full text-white hover:text-blue-500"
+                                        className="flex flex-col items-center justify-center w-full h-full text-white hover:text-blue-500 px-4 py-2"
                                     >
                                         {item.icon}
                                         <span className="text-xs mt-1">{item.label}</span>
