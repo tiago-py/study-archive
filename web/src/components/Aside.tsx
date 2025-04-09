@@ -14,7 +14,8 @@ import {
     NotebookPen,
     CalendarFold,
     LayoutGrid,
-    Atom
+    Atom,
+    BookA
 } from 'lucide-react';
 
 interface MenuItem {
@@ -38,8 +39,9 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
         { label: 'Home', icon: <Home size={24} className='text-blue-500' />, href: '/' },
         { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
         { label: 'Física', icon: <Atom size={24} className='text-blue-500' />, href: '/modules/physics' },
-        { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
+        { label: 'Português', icon: <BookA size={24} className='text-blue-500' />, href: '/modules/port' },
         { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
+        { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
         { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
         { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/chat' },
     ];
@@ -52,8 +54,9 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
             subItems: [
                 { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
                 { label: 'Física', icon: <Atom size={24} className='text-blue-500' />, href: '/modules/physics' },
-                { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
+                { label: 'Português', icon: <BookA size={24} className='text-blue-500' />, href: '/modules/port' },
                 { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
+                { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
                 { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
                 { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/chat' }
             ]
