@@ -6,29 +6,27 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import Aside from '@/components/Aside';
-import { FileSpreadsheet } from 'lucide-react';
+import { BookA } from 'lucide-react';
 
-// Dados dos recursos de Excel
-const excelBooks = [
-  { name: "Excel 2019 Bible", link: "#", author: "Michael Alexander" },
-  { name: "Power Pivot and Power BI", link: "#", author: "Michael Alexander" },
-  { name: "Excel Formulas and Functions", link: "#", author: "Paul McFedries" },
-  { name: "Dashboards for Excel", link: "#", author: "Jordan Goldmeier" }
+const portugueseBooks = [
+  { name: "Moderna Gramática Portuguesa", link: "#", author: "Evanildo Bechara" },
+  { name: "Nova Gramática do Português Contemporâneo", link: "#", author: "Celso Cunha e Lindley Cintra" },
+  { name: "Gramática Escolar da Língua Portuguesa", link: "#", author: "Napoleão Mendes de Almeida" }
 ];
 
 const onlineCourses = [
-  { name: "Microsoft Excel - Curso Completo", link: "https://www.udemy.com/topic/excel/", platform: "Udemy" },
-  { name: "Excel Skills for Business", link: "https://www.coursera.org/specializations/excel", platform: "Coursera" },
-  { name: "Excel Essentials", link: "https://www.linkedin.com/learning/excel-essential-training-microsoft-365-apps", platform: "LinkedIn Learning" }
+  { name: "Português para concursos", link: "https://www.udemy.com/course/portugues-para-concursos/", platform: "Udemy" },
+  { name: "Português – Gramática, Redação e Interpretação", link: "https://www.educamaisbrasil.com.br/cursos-online/portugues", platform: "Educa Mais Brasil" },
+  { name: "Curso de Português - Interpretação de Textos", link: "https://www.coursera.org/learn/compreensao-textos", platform: "Coursera" }
 ];
 
 const usefulTools = [
-  { name: "Microsoft Excel Help Center", link: "https://support.microsoft.com/excel" },
-  { name: "ExcelJet - Atalhos e Dicas", link: "https://exceljet.net/" },
-  { name: "Chandoo - Excel Tips & Tricks", link: "https://chandoo.org/" }
+  { name: "Michaelis - Dicionário Online", link: "https://michaelis.uol.com.br/" },
+  { name: "Nova Ortografia da Língua Portuguesa", link: "https://www.academia.org.br/nova-ortografia" },
+  { name: "Gramatiqueando - Gramática Online", link: "https://www.gramatiqueando.com.br/" }
 ];
 
-const Excel = () => {
+const Portuguese = () => {
   return (
     <>
       <Aside>
@@ -46,7 +44,7 @@ const Excel = () => {
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
                       <BreadcrumbLink asChild>
-                        <Link href={"/modules/excel"}>Excel</Link>
+                        <Link href={"/modules/portuguese"}>Português</Link>
                       </BreadcrumbLink>
                     </BreadcrumbItem>
                   </BreadcrumbList>
@@ -55,8 +53,8 @@ const Excel = () => {
               <div className="grid grid-cols-1 gap-6">
                 <div className="bg-slate-900 p-6 rounded-xl shadow-lg">
                   <h2 className="text-xl md:text-3xl font-semibold mb-4 flex items-center gap-2">
-                    <FileSpreadsheet className="text-blue-400" />
-                    Recursos de Excel
+                    <BookA className="text-blue-400" />
+                    Recursos de Português
                   </h2>
                   <Accordion type="single" collapsible>
                     <AccordionItem value="books">
@@ -65,7 +63,7 @@ const Excel = () => {
                       </AccordionTrigger>
                       <AccordionContent>
                         <ul className="mt-2 space-y-3">
-                          {excelBooks.map((book, index) => (
+                          {portugueseBooks.map((book, index) => (
                             <li key={index} className="hover:bg-slate-800 p-2 rounded">
                               <Link href={book.link} className="text-blue-400 hover:underline block">
                                 <span className="font-medium">{book.name}</span>
@@ -116,22 +114,22 @@ const Excel = () => {
                   </ul>
                 </div>
                 <div className="bg-slate-900 p-6 rounded-xl shadow-lg">
-                  <h2 className="text-2xl md:text-3xl font-semibold mb-4">Atalhos Úteis</h2>
+                  <h2 className="text-2xl md:text-3xl font-semibold mb-4">Dicas e truques</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Geral</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Gramática</h3>
                       <ul className="space-y-2 text-sm">
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + N</span> - Novo arquivo</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + S</span> - Salvar</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">F12</span> - Salvar como</li>
+                        <li>Evite pleonasmos como <i>"subir para cima"</i>.</li>
+                        <li>Prefira <i>"haver"</i> no lugar de <i>"ter"</i> em textos formais.</li>
+                        <li>Atenção à crase: use quando há a fusão de "a" com "a" (ex: à escola).</li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Formatação</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Ortografia</h3>
                       <ul className="space-y-2 text-sm">
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + B</span> - Negrito</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + 1</span> - Abrir formatação</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Alt + H + O + I</span> - Autoajustar coluna</li>
+                        <li>Desde 2009, não se usa mais o trema em palavras como <i>linguiça</i> e <i>frequente</i>.</li>
+                        <li>Palavras com hífen mudaram: <i>anti-inflamatório</i> → <i>anti-inflamatório</i> (sem mudança); <i>auto escola</i> → <i>autoescola</i>.</li>
+                        <li>Revise acentuação de paroxítonas terminadas em "i" e "u" depois de ditongos: <i>feiúra</i> virou <i>feiura</i>.</li>
                       </ul>
                     </div>
                   </div>
@@ -145,4 +143,4 @@ const Excel = () => {
   );
 };
 
-export default Excel;
+export default Portuguese;

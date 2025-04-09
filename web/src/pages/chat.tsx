@@ -7,9 +7,15 @@ import {
   ChevronDown,
   Send
 } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import Aside from "@/components/Aside";
 import "@/app/globals.css";
+
 
 export default function ChatPDFInterface() {
   return (
@@ -18,10 +24,10 @@ export default function ChatPDFInterface() {
         {/* Header */}
         <header className="flex items-center p-4 border-b border-slate-800">
           <div className="flex items-center flex-1">
-            <Button variant="ghost" size="icon" className="rounded-full mr-4">
-              <HelpCircle className="h-5 w-5 mx-auto" />
-            </Button>
-
+          <Popover>
+              <PopoverTrigger className="h-5 w-5 mr-3"><HelpCircle/></PopoverTrigger>
+              <PopoverContent>Envie um PDF e faça perguntas sobre ele, ou sobre qualquer coisa!</PopoverContent>
+          </Popover>
             <div className="flex items-center">
               <span className="font-medium">ChatPDF</span>
             </div>

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Physics from '@/modules/physics';
+import Port from '@/modules/port';
 import {
     Home,
     ChevronLeft,
@@ -13,7 +15,8 @@ import {
     BookMarkedIcon,
     NotebookPen,
     CalendarFold,
-    LayoutGrid
+    LayoutGrid,
+    Atom
 } from 'lucide-react';
 
 interface MenuItem {
@@ -36,6 +39,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
     const menuItems: MenuItem[] = [
         { label: 'Home', icon: <Home size={24} className='text-blue-500' />, href: '/' },
         { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
+        { label: 'Física', icon: <Atom size={24} className='text-blue-500' />, href: '/modules/physics' },
         { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
         { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
         { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
@@ -49,6 +53,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
             icon: <LayoutGrid size={24} className='text-blue-500' />,
             subItems: [
                 { label: 'Matemática', icon: <Calculator size={24} className='text-blue-500' />, href: '/modules/math' },
+                { label: 'Física', icon: <Atom size={24} className='text-blue-500' />, href: '/modules/physics' },
                 { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
                 { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
                 { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
@@ -77,18 +82,18 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
     }, []);
 
     useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-        const target = event.target as HTMLElement;
-        if (mobileOpenSubMenu && !target.closest('.mobile-nav-button')) {
-            setMobileOpenSubMenu(null);
-        }
-    };
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (mobileOpenSubMenu && !target.closest('.mobile-nav-button')) {
+                setMobileOpenSubMenu(null);
+            }
+        };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-        document.removeEventListener('click', handleClickOutside);
-    };
-}, [mobileOpenSubMenu]);
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [mobileOpenSubMenu]);
 
     const toggleSidebar = () => {
         setIsOpen((prev) => {
@@ -114,17 +119,12 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
 
     return (
         <div className="flex min-h-screen relative">
-            {/* Sidebar for desktop */}
             <nav
-                className={`bg-slate-900 ${isOpen ? 'w-screen fixed md:w-[250px] md:relative' : 'w-[80px]'
-                    } min-h-screen transition-all duration-300 shrink-0 z-50 md:block ${isMobile && !isOpen ? 'hidden' : ''
-                    }`}
+                className={`bg-slate-900 ${isOpen ? 'w-screen fixed md:w-[250px] md:relative' : 'w-[80px]'} min-h-screen transition-all duration-300 shrink-0 z-50 md:block ${isMobile && !isOpen ? 'hidden' : ''}`}
             >
                 <ul className="list-none p-4 h-screen overflow-y-auto">
                     <li className="flex justify-between items-center mb-4">
-                        <span
-                            className={`${isOpen ? 'font-semibold' : 'hidden'} text-white text-lg ml-4`}
-                        >
+                        <span className={`${isOpen ? 'font-semibold' : 'hidden'} text-white text-lg ml-4`}>
                             Study Assistant
                         </span>
                         <button onClick={toggleSidebar} id="toggle-btn">
@@ -146,22 +146,17 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                                     >
                                         <div className="flex items-center gap-4">
                                             {item.icon}
-                                            <span
-                                                className={`${isOpen ? 'block' : 'hidden'} text-gray-200`}
-                                            >
+                                            <span className={`${isOpen ? 'block' : 'hidden'} text-gray-200`}>
                                                 {item.label}
                                             </span>
                                         </div>
-                                        {isOpen &&
-                                            (openSubMenu === item.label ? (
-                                                <ChevronUp size={20} className="text-white" />
-                                            ) : (
-                                                <ChevronDown size={20} className="text-white" />
-                                            ))}
+                                        {isOpen && (openSubMenu === item.label ? (
+                                            <ChevronUp size={20} className="text-white" />
+                                        ) : (
+                                            <ChevronDown size={20} className="text-white" />
+                                        ))}
                                     </button>
-                                    <ul
-                                        className={`pl-8 transition-all ${openSubMenu === item.label ? 'block' : 'hidden'}`}
-                                    >
+                                    <ul className={`pl-8 transition-all ${openSubMenu === item.label ? 'block' : 'hidden'}`}>
                                         {item.subItems.map((subItem, subIndex) => (
                                             <li key={subIndex}>
                                                 <Link
@@ -178,9 +173,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                                 <Link href={item.href}>
                                     <p className="flex items-center gap-4 p-3 rounded hover:bg-gray-800">
                                         {item.icon}
-                                        <span
-                                            className={`${isOpen ? 'block' : 'hidden'} text-gray-200`}
-                                        >
+                                        <span className={`${isOpen ? 'block' : 'hidden'} text-gray-200`}>
                                             {item.label}
                                         </span>
                                     </p>
@@ -191,12 +184,10 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                 </ul>
             </nav>
 
-            {/* Main content */}
             <main className={`${isOpen ? 'md:pl-0' : 'pl-0'} flex-grow overflow-auto pb-20 md:pb-0`}>
                 {children}
             </main>
 
-            {/* Mobile bottom navigation */}
             {isMobile && (
                 <nav className="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-blue-600 z-50">
                     <div className="flex justify-around items-center h-16">

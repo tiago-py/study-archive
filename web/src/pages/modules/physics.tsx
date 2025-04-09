@@ -6,29 +6,27 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import Aside from '@/components/Aside';
-import { FileSpreadsheet } from 'lucide-react';
+import { BookA } from 'lucide-react';
 
-// Dados dos recursos de Excel
-const excelBooks = [
-  { name: "Excel 2019 Bible", link: "#", author: "Michael Alexander" },
-  { name: "Power Pivot and Power BI", link: "#", author: "Michael Alexander" },
-  { name: "Excel Formulas and Functions", link: "#", author: "Paul McFedries" },
-  { name: "Dashboards for Excel", link: "#", author: "Jordan Goldmeier" }
+const physicsBooks = [
+  { name: "Física - Volume Único", link: "#", author: "Alberto Gaspar" },
+  { name: "Fundamentos de Física - Vol. 1 a 4", link: "#", author: "David Halliday, Robert Resnick, Jearl Walker" },
+  { name: "Tópicos de Física", link: "#", author: "Gelson Iezzi et al." }
 ];
 
 const onlineCourses = [
-  { name: "Microsoft Excel - Curso Completo", link: "https://www.udemy.com/topic/excel/", platform: "Udemy" },
-  { name: "Excel Skills for Business", link: "https://www.coursera.org/specializations/excel", platform: "Coursera" },
-  { name: "Excel Essentials", link: "https://www.linkedin.com/learning/excel-essential-training-microsoft-365-apps", platform: "LinkedIn Learning" }
+  { name: "Curso de Física Completo", link: "https://www.udemy.com/course/curso-de-fisica-completo/", platform: "Udemy" },
+  { name: "Introdução à Física", link: "https://pt.khanacademy.org/science/physics", platform: "Khan Academy" },
+  { name: "Física Básica", link: "https://www.coursera.org/learn/fisica-basica", platform: "Coursera" }
 ];
 
 const usefulTools = [
-  { name: "Microsoft Excel Help Center", link: "https://support.microsoft.com/excel" },
-  { name: "ExcelJet - Atalhos e Dicas", link: "https://exceljet.net/" },
-  { name: "Chandoo - Excel Tips & Tricks", link: "https://chandoo.org/" }
+  { name: "PhET Simulações Interativas", link: "https://phet.colorado.edu/pt_BR/" },
+  { name: "Khan Academy - Física", link: "https://pt.khanacademy.org/science/physics" },
+  { name: "Instituto de Física da USP", link: "https://portal.if.usp.br/" }
 ];
 
-const Excel = () => {
+const Physics = () => {
   return (
     <>
       <Aside>
@@ -46,7 +44,7 @@ const Excel = () => {
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
                       <BreadcrumbLink asChild>
-                        <Link href={"/modules/excel"}>Excel</Link>
+                        <Link href={"/modules/physics"}>Física</Link>
                       </BreadcrumbLink>
                     </BreadcrumbItem>
                   </BreadcrumbList>
@@ -55,8 +53,8 @@ const Excel = () => {
               <div className="grid grid-cols-1 gap-6">
                 <div className="bg-slate-900 p-6 rounded-xl shadow-lg">
                   <h2 className="text-xl md:text-3xl font-semibold mb-4 flex items-center gap-2">
-                    <FileSpreadsheet className="text-blue-400" />
-                    Recursos de Excel
+                    <BookA className="text-blue-400" />
+                    Recursos de Física
                   </h2>
                   <Accordion type="single" collapsible>
                     <AccordionItem value="books">
@@ -65,7 +63,7 @@ const Excel = () => {
                       </AccordionTrigger>
                       <AccordionContent>
                         <ul className="mt-2 space-y-3">
-                          {excelBooks.map((book, index) => (
+                          {physicsBooks.map((book, index) => (
                             <li key={index} className="hover:bg-slate-800 p-2 rounded">
                               <Link href={book.link} className="text-blue-400 hover:underline block">
                                 <span className="font-medium">{book.name}</span>
@@ -116,22 +114,22 @@ const Excel = () => {
                   </ul>
                 </div>
                 <div className="bg-slate-900 p-6 rounded-xl shadow-lg">
-                  <h2 className="text-2xl md:text-3xl font-semibold mb-4">Atalhos Úteis</h2>
+                  <h2 className="text-2xl md:text-3xl font-semibold mb-4">Dicas e truques</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Geral</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Conceitos Básicos</h3>
                       <ul className="space-y-2 text-sm">
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + N</span> - Novo arquivo</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + S</span> - Salvar</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">F12</span> - Salvar como</li>
+                        <li><strong>Velocidade Média:</strong> distância / tempo.</li>
+                        <li><strong>Força:</strong> massa × aceleração (F = m × a).</li>
+                        <li><strong>Energia Cinética:</strong> (mv²) / 2.</li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Formatação</h3>
+                      <h3 className="text-lg font-semibold mb-2 text-blue-400">Unidades e Dicas</h3>
                       <ul className="space-y-2 text-sm">
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + B</span> - Negrito</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Ctrl + 1</span> - Abrir formatação</li>
-                        <li><span className="font-mono bg-slate-800 px-2 py-1 rounded">Alt + H + O + I</span> - Autoajustar coluna</li>
+                        <li>Use SI (Sistema Internacional): metro, segundo, kg, etc.</li>
+                        <li>Verifique as unidades antes de resolver problemas.</li>
+                        <li>Faça desenhos e diagramas sempre que possível para visualizar os sistemas.</li>
                       </ul>
                     </div>
                   </div>
@@ -145,4 +143,4 @@ const Excel = () => {
   );
 };
 
-export default Excel;
+export default Physics;
