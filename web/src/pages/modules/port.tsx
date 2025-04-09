@@ -119,9 +119,9 @@ const Portuguese = () => {
                     <div>
                       <h3 className="text-lg font-semibold mb-2 text-blue-400">Gramática</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>Evite pleonasmos como <i>"subir para cima"</i>.</li>
-                        <li>Prefira <i>"haver"</i> no lugar de <i>"ter"</i> em textos formais.</li>
-                        <li>Atenção à crase: use quando há a fusão de "a" com "a" (ex: à escola).</li>
+                        <li>Evite pleonasmos como <i>&quot;subir para cima&quot;</i>.</li>
+                        <li>Prefira <i>&quot;haver&quot;</i> no lugar de <i>&quot;ter&quot;</i> em textos formais.</li>
+                        <li>Atenção à crase: use quando há a fusão de &quot;a&quot; com &quot;a&quot; (ex: à escola).</li>
                       </ul>
                     </div>
                     <div>
@@ -129,7 +129,7 @@ const Portuguese = () => {
                       <ul className="space-y-2 text-sm">
                         <li>Desde 2009, não se usa mais o trema em palavras como <i>linguiça</i> e <i>frequente</i>.</li>
                         <li>Palavras com hífen mudaram: <i>anti-inflamatório</i> → <i>anti-inflamatório</i> (sem mudança); <i>auto escola</i> → <i>autoescola</i>.</li>
-                        <li>Revise acentuação de paroxítonas terminadas em "i" e "u" depois de ditongos: <i>feiúra</i> virou <i>feiura</i>.</li>
+                        <li>Revise acentuação de paroxítonas terminadas em &quot;i&quot; e &quot;u&quot; depois de ditongos: <i>feiúra</i> virou <i>feiura</i>.</li>
                       </ul>
                     </div>
                   </div>
