@@ -10,10 +10,10 @@ import { BookOpen, Calculator } from 'lucide-react';
 
 // Dados dos recursos de matemática
 const mathBooks = [
-  { name: "Cálculo Vol. 1", link: "#", author: "James Stewart" },
-  { name: "Álgebra Linear", link: "#", author: "Boldrini" },
-  { name: "Matemática Básica", link: "#", author: "Elon Lages Lima" },
-  { name: "Introdução à Estatística", link: "#", author: "Mario Triola" }
+  { name: "Cálculo Vol. 1", link: "https://ia601303.us.archive.org/23/items/calculo-vol-1-9-ed-james-stewart-daniel-clegg-saleem-watson-cengage-2022/C%C3%A1lculo%20Vol%201%209Ed%20-%20James%20Stewart%2C%20Daniel%20Clegg%2C%20Saleem%20Watson%20-%20Cengage%20%282022%29.pdf", author: "James Stewart" },
+  { name: "Álgebra Linear", link: "https://dn790001.ca.archive.org/0/items/algebra-linear-colecao-schaum-4a-ed.-seymour-lipschutz-e-marc-lipson/%C3%81lgebra%20Linear%20Cole%C3%A7%C3%A3o%20Schaum%20%284%C2%AA%20ed.%29%20-%20Seymour%20Lipschutz%20e%20Marc%20Lipson.pdf", author: "Boldrini" },
+  { name: "Matemática Básica", link: "https://archive.org/details/a_matematica_do_ensino_medio/Volume%201/", author: "Elon Lages Lima" },
+  { name: "Introdução à Estatística", link: "https://archive.org/details/introducaoaestat0000trio", author: "Mario Triola" }
 ];
 
 const onlineCourses = [

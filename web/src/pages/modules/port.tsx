@@ -9,9 +9,9 @@ import Aside from '@/components/Aside';
 import { BookA } from 'lucide-react';
 
 const portugueseBooks = [
-  { name: "Moderna Gramática Portuguesa", link: "#", author: "Evanildo Bechara" },
-  { name: "Nova Gramática do Português Contemporâneo", link: "#", author: "Celso Cunha e Lindley Cintra" },
-  { name: "Gramática Escolar da Língua Portuguesa", link: "#", author: "Napoleão Mendes de Almeida" }
+  { name: "Gramática Cegalla", link: "https://drive.google.com/uc?export=download&id=1CugQrOwWe3YO8LpjRrGsY3WRgT88pRTN", author: "Evanildo Bechara" },
+  { name: "Nova Gramática do Português Contemporâneo", link: "https://drive.google.com/uc?export=download&id=12jJb6cWYj7pmBiBDu_Crl0foyupOKP4g", author: "Celso Cunha e Lindley Cintra" },
+  { name: "Gramática Escolar da Língua Portuguesa", link: "https://drive.google.com/uc?export=download&id=14Kjto47sO-GGVm-4HBFyslE5lB9Mz89A", author: "Napoleão Mendes de Almeida" }
 ];
 
 const onlineCourses = [

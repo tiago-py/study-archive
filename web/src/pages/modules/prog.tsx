@@ -10,29 +10,29 @@ import { Code } from 'lucide-react';
 
 // Dados dos recursos de Programação
 const programmingBooks = [
-  { 
-    name: "Clean Code", 
-    link: "#",
-    author: "Robert C. Martin",
-    category: "Boas práticas"
-  },
-  { 
+ { 
     name: "The Pragmatic Programmer", 
-    link: "#",
+    link: "https://ia801603.us.archive.org/24/items/AndrewHuntDavidThomasThePragmaticProgrammerFromJourneymanToMasterAddisonWesleyLongman2000/Andrew%20Hunt%2C%20David%20Thomas-The%20Pragmatic%20Programmer_%20From%20Journeyman%20to%20Master-Addison%20Wesley%20Longman%20%282000%29.pdf",
     author: "Andrew Hunt & David Thomas",
     category: "Carreira"
   },
   { 
-    name: "Design Patterns", 
-    link: "#",
-    author: "Gang of Four",
-    category: "Padrões de projeto"
+    name: "Entendendo Algoritmos: Um guia ilustrado para programadores e outros curiosos", 
+    link: "1PFEXveiwGthGym4jgq8XvKLXn8VSToBl",
+    author: "Aditya Y. Bhargava",
+    category: "Estruturas de dados e algoritmos."
   },
   { 
     name: "JavaScript: The Good Parts", 
-    link: "#",
+    link: "https://ia801209.us.archive.org/26/items/javascript.-the-good-parts_202401/javascript.%20the%20good%20parts.pdf",
     author: "Douglas Crockford",
     category: "JavaScript"
+  }
+  { 
+    name: "Livros Diversos", 
+    link: "https://drive.google.com/drive/folders/1nXET_nY2Fxo02ks2OhnRlTj09GAtsOMJ?usp=drive_link",
+    author: "Vários autores",
+    category: "Livros e Coleções"
   }
 ];
 

@@ -42,7 +42,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
         { label: 'Português', icon: <BookA size={24} className='text-blue-500' />, href: '/modules/port' },
         { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
         { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
-        { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
+        { label: 'Github', icon: <Cpu size={24} className='text-blue-500' />, href: 'modules/github' },
         { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/chat' },
     ];
 
@@ -57,7 +57,7 @@ const Aside: React.FC<AsideProps> = ({ children }) => {
                 { label: 'Português', icon: <BookA size={24} className='text-blue-500' />, href: '/modules/port' },
                 { label: 'Inglês', icon: <BookMarkedIcon size={24} className='text-blue-500' />, href: '/modules/english' },
                 { label: 'Programação', icon: <Cpu size={24} className='text-blue-500' />, href: '/modules/prog' },
-                { label: 'Excel', icon: <CalendarFold size={24} className='text-blue-500' />, href: '/modules/excel' },
+                { label: 'Github', icon: <Cpu size={24} className='text-blue-500' />, href: 'modules/github' },
                 { label: 'Chat PDF', icon: <NotebookPen size={24} className='text-blue-500' />, href: '/chat' }
             ]
         },

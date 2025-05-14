@@ -9,9 +9,9 @@ import Aside from '@/components/Aside';
 import { BookA } from 'lucide-react';
 
 const physicsBooks = [
-  { name: "Física - Volume Único", link: "#", author: "Alberto Gaspar" },
-  { name: "Fundamentos de Física - Vol. 1 a 4", link: "#", author: "David Halliday, Robert Resnick, Jearl Walker" },
-  { name: "Tópicos de Física", link: "#", author: "Gelson Iezzi et al." }
+  { name: "Física - Contexto e aplicações", link: "https://drive.google.com/uc?export=download&id=1SsqUMSeKYMxTPAdv0rh3Zq3zyBzIHcDe", author: "Alberto Gaspar" },
+  { name: "Fundamentos de Física - Vol. 1 a 4", link: "https://drive.google.com/drive/u/2/folders/1sHTavSQMIJZDoIMdNS6dJFrGyf_IcFip", author: "David Halliday, Robert Resnick, Jearl Walker" },
+  { name: "Tópicos de Física", link: "https://drive.google.com/drive/u/2/folders/1xuSKjO_6R44d-eKoXp7qrQbD6FkCUD85", author: "Gelson Iezzi et al." }
 ];
 
 const onlineCourses = [
