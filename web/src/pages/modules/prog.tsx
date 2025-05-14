@@ -27,7 +27,7 @@ const programmingBooks = [
     link: "https://ia801209.us.archive.org/26/items/javascript.-the-good-parts_202401/javascript.%20the%20good%20parts.pdf",
     author: "Douglas Crockford",
     category: "JavaScript"
-  }
+  },
   { 
     name: "Livros Diversos", 
     link: "https://drive.google.com/drive/folders/1nXET_nY2Fxo02ks2OhnRlTj09GAtsOMJ?usp=drive_link",
